@@ -7,6 +7,16 @@ import Customer from "./customer/Customer"
 import "./customer/Customers.css"
 import Employee from "./employee/Employee"
 import "./employee/Employees.css"
+import { LocationProvider } from "./location/LocationProvider"
+import LocationList from "./location/LocationList"
+import { AnimalProvider } from "./animal/AnimalProvider"
+import AnimalList from "./animal/AnimalList"
+import { CustomerProvider } from "./customer/CustomerProvider"
+import CustomerList from "./customer/CustomerList"
+import { EmployeeProvider } from "./employee/EmployeeProvider"
+import EmployeeList from "./employee/EmployeeList"
+import "./Kennel.css"
+
 
 export default () => (
     <>
@@ -18,31 +28,23 @@ export default () => (
         </address>
 
         <h2>Animals</h2>
-        <article className="animals">
-            <Animal />
-            <Animal />
-            <Animal />
-        </article>
+        <AnimalProvider>
+          <AnimalList />
+        </AnimalProvider>
 
         <h2>Locations</h2>
-        <article className="locations">
-            <Location />
-            <Location />
-        </article>
+        <LocationProvider>
+          <LocationList />
+        </LocationProvider>
 
         <h2>Customer</h2>
-        <article className="customer">
-            <Customer />
-            <Customer />
-            <Customer />
-            <Customer />
-        </article>
+        <CustomerProvider>
+          <CustomerList />
+        </CustomerProvider>
 
         <h2>Employee</h2>
-        <article className="employee">
-            <Employee />
-            <Employee />
-            <Employee />
-        </article>
+        <EmployeeProvider>
+          <EmployeeList />
+        </EmployeeProvider>
     </>
 )
